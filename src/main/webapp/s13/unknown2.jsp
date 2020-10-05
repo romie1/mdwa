@@ -3,10 +3,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Logged</title>
+<title>Can't login</title>
 </head>
 <body>
-    <h1>Hello ${user}</h1>
+    <h1>You are not Romielyn Casio, imposter!</h1>
     <p>
         Back <a href="/mdwa/index.html">home</a>
     </p>

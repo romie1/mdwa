@@ -26,12 +26,13 @@ public class Timer extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("utf-8");
         try (PrintWriter writer = response.getWriter()) {
+        	//html dinamico
             writer.println("<!DOCTYPE html><html>");
             writer.println("<head><meta charset=\"utf-8\">");
             writer.println("<title>Hello Servlet</title></head>");
             writer.println("<body>");
             writer.println("<h1>" + LocalTime.now() + "</h1>");
-            writer.println("<a href=\"..\">" + "back home" + "</a>");
+            writer.println("<a href=\"..\">back home</a>");
             writer.println("</body></html>");
         }
     }

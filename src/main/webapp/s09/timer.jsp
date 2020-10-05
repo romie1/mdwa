@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.time.LocalTime"%>
 <!DOCTYPE html>
 <html>
@@ -7,6 +8,7 @@
 </head>
 <body>
     <h1>
+    	<!--  unico elemento di dinamicità-->
         <%
             out.print(LocalTime.now());
         %>

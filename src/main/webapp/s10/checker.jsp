@@ -10,6 +10,7 @@
     <h1>Hello!</h1>
     <p id="result">
         The user name
+        <!--  quest è uno scriptlet e non viene più utilizzato -->
         <%
             @SuppressWarnings("unchecked")
             Set<Character> set = (Set<Character>) request.getAttribute("set");
