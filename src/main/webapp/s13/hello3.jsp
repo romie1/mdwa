@@ -39,7 +39,8 @@
 		</table>
 	</c:if>
 
-	<%@include file="/backHome1.html"%>
-	<%@include file="/mdwa/src/main/webapp/s10/backHome.html"%>
+	<%-- @include file="/backHome1.html"--%>
+	<%@include file="../s10/backHome.html"%>
+	<%-- @include file="/s10/backHome.html"--%>
 </body>
 </html>

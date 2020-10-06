@@ -17,7 +17,7 @@ import org.slf4j.LoggerFactory;
 
 @WebServlet("/s17/greeter")
 public class Greeter extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L; //identifica in modo univoco la versione di Greeter
     private static final Logger LOG = LoggerFactory.getLogger(Greeter.class);
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -25,8 +25,19 @@ public class Greeter extends HttpServlet {
         LOG.trace("called");
         
         HttpSession session = request.getSession();
+        //primo accesso start è null
         LocalTime start = (LocalTime) session.getAttribute("start");
-
+       
+//        Object o = session.getAttribute("start");
+//        LocalTime start;
+//        if (o instanceof LocalTime) {
+//        	start = (LocalTime) o;
+//        	
+//        }else {
+//        	LOG.error("!!!");
+//        	return;
+//        }
+        
         Duration duration;
         if (start == null) {
             duration = Duration.ZERO;
@@ -34,11 +45,13 @@ public class Greeter extends HttpServlet {
         } else {
             duration = Duration.between(start, LocalTime.now());
         }
-
+        
+        //utente non mi ha passato parameter done
         if (request.getParameter("done") == null) {
             request.setAttribute("duration", duration);
             request.getRequestDispatcher("/s17/greeter.jsp").forward(request, response);
         } else {
+        	//utente mi ha passato parameter done e quindi termino la session
             session.invalidate();
 
             response.setContentType("text/html");

@@ -13,8 +13,7 @@
     <c:if test="${total != null and total != 0}">
         <p>You have bought ${total} vinyls. Thank you!</p>
     </c:if>
-    <p>
-        Back <a href="/mdwa/index.html">home</a>
-    </p>
+    
+	   <%@include file="../s10/backHome.html"%>
 </body>
 </html>

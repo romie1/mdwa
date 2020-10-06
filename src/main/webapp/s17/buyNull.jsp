@@ -18,19 +18,21 @@
             <option value="2">Two</option>
             <option value="3">Three</option>
             <option value="4">Four</option>
-        </select> <label>Quantity: <input name="quantity" type="number"></label>
-        <button>Get</button>
+        </select> 
+        <label>Quantity: <input name="quantity" type="number"></label>
+        <button>Add</button>
     </form>
 
     <c:if test="${total != null and total != 0}">
-        <p>You have already ordered ${total} from our vinyls. Thank you!;</p>
+        <p>You have already ordered ${total} from our vinyls. Thank you!</p>
         <form action="/mdwa/s17/buyNull">
             <label>Coupon <input name="coupon"></label>
+            <br>
+            <br>
             <button>Buy</button>
         </form>
     </c:if>
-    <p>
-        Back <a href="/mdwa/index.html">home</a>
-    </p>
+   
+      <%@include file="../s10/backHome.html"%>
 </body>
 </html>

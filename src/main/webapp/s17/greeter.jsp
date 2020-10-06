@@ -9,8 +9,7 @@
     <h1>The greeter page</h1>
 
     <p>You started working on this stuff ${duration.seconds} seconds ago</p>
-    <p>
-        Back <a href="/mdwa/index.html">home</a>
-    </p>
+    
+    <%@include file="../s10/backHome.html"%>
 </body>
 </html>

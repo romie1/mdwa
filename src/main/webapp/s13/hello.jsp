@@ -11,7 +11,7 @@
 	<br>
 	<h1>Welcome ${param.firstName} ${param.lastName}! Hello, my friend!</h1>
 
-	<%@include file="/backHome1.html"%>	
+	<%@include file="../s10/backHome.html"%>	
 
 </body>
 </html>

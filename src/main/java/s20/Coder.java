@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class Coder {
     private long id;
+    private String color;
     private String firstName;
     private String lastName;
     private LocalDate hireDate;
@@ -26,6 +27,11 @@ public class Coder {
         this.lastName = lastName;
         this.hireDate = hireDate;
         this.salary = salary;
+    }
+    
+    public Coder(String color,long id,  String firstName, String lastName, LocalDate hireDate, double salary) {
+    	this(id, firstName, lastName, LocalDate.now(), salary);
+    	this.color = color;
     }
 
     public long getId() {
@@ -68,9 +74,23 @@ public class Coder {
         this.salary = salary;
     }
 
-    @Override
-    public String toString() {
-        return "Coder [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", hireDate=" + hireDate
-                + ", salary=" + salary + "]";
-    }
+    
+    public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Coder [id=").append(id).append(", color=").append(color).append(", firstName=")
+				.append(firstName).append(", lastName=").append(lastName).append(", hireDate=").append(hireDate)
+				.append(", salary=").append(salary).append("]");
+		return builder.toString();
+	}
+
+	
 }
