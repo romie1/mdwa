@@ -7,9 +7,11 @@
 <title>Hello</title>
 </head>
 <body>
+	<br>
+	<br>
 	<h1>Welcome ${param.firstName} ${param.lastName}! Hello, my friend!</h1>
-	<p>
-		Back <a href="/mdwa/index.html">home</a>
-	</p>
+
+	<%@include file="/backHome1.html"%>	
+
 </body>
 </html>

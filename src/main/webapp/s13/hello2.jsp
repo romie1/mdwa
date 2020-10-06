@@ -5,9 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Hello</title>
+<title>Hello2</title>
 </head>
 <body>
+	<br>
+	
 	<c:if
 		test="${registered == false && param.firstName == '' && param.lastName != ''}">
 		<p>First name registered is null or wrong!</p>
@@ -25,8 +27,6 @@
 		<p>Last name is ${param.lastName}</p>
 		<h1>Welcome ${param.firstName} ${param.lastName}! Hello, my friend!</h1>
 	</c:if>
-	 <%@include file="/mdwa/s10/backHome.html"%>
-	  <%@include file="/mdwa/src/main/webapp/s10/backHome.html"%>
+	
+<jsp:include page="/backHome2.html"></jsp:include>	
 	 
-</body>
-</html>
