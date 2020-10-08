@@ -22,21 +22,25 @@ public class FilterRestricted implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
+    	//controllo se request è HTTPSERVLETREQUEST
         if (request instanceof HttpServletRequest) {
             boolean logged = false;
             try {
+            	//inizio sessione
                 HttpSession session = ((HttpServletRequest) request).getSession();
-                Boolean attribute = (Boolean) session.getAttribute("logged");
+                Boolean attribute = (Boolean) session.getAttribute("logged"); 
                 if (attribute != null && attribute == true) {
                     logged = true;
                 }
 
-                session.setAttribute("logged", false);
+                session.setAttribute("logged", false);//una volta fatto un'operazione in una session ed uscito, devi rifare il login
             } catch (Exception ex) {
                 LOG.warn(ex.getMessage());
             }
 
             LOG.trace("Access to restricted area is " + logged);
+            //se logged = false, ti rimando al login.html
+            //differnza tra redirect crea nuova request, e la forward mantiene la request originaria
             if (!logged) {
                 // new request, the URL is _not_ relative to the current web app
                 ((HttpServletResponse) response).sendRedirect("/mdwa/s23/login.html");
@@ -47,6 +51,9 @@ public class FilterRestricted implements Filter {
                 // in both case, remember to end here the filtering
                 return;
             }
+        }else {
+            ((HttpServletResponse) response).sendRedirect("/mdwa/s23/login.html");
+        	return;
         }
 
         chain.doFilter(request, response);

@@ -11,6 +11,9 @@ import org.hibernate.service.ServiceRegistry;
 
 public class HibernateUtil {
     private static SessionFactory sessionFactory;
+    
+    private HibernateUtil() {}
+    
     static {
         Configuration configuration = new Configuration();
         Properties settings = new Properties();
